@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>COVID19Detector! </title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+
+
+.footer1 {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+</style>
+<!-- <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://rawgit.com/Anujarya300/bubble_maps/master/data/geography-data/datamaps.none.js"></script>
+   -->
+  
+</head>
+<body>
+	{% include 'navbar.html'  %}
+	{% block content  %}
+	{% endblock %}
+
+
+ <footer class="footer">
+      <div class="container" style="text-align: center; background: #3e3d3d;    padding: 0px;    margin: 0px;    max-width: 100%;">
+        <span class="text-muted" style="text-align: center;">We stand with everyone fighting on the frontlines</span><br>
+        <span class="text-muted" style="text-align: center;">This site is not official data collecting from <a href="https://www.mohfw.gov.in/">mohfw.gov.in</a></span><br>
+        <span class="text-muted" style="text-align: center;">#Visted:{{visited}}</span><br>
+        <span class="text-muted" style="text-align: center;"> GitHub : <a href="https://github.com/subahanii/COVID19-tracker" >COVID19-Tracker-repo</a></span>
+      </div>
+</footer>
+
+<!-- <div class="footer1">
+  <div class="footer-copyright text-center py-3"> GitHub : <a href="https://github.com/subahanii/knit-result-analyzer" style="color: white">KNIT's Result Analyzer</a> #Visted:{{visited}}
+  </div>
+</div> -->
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,51 @@
+
+<script>
+function JSdeathPieChart(){
+var deathData = {{deathPie|safe}}; 
+
+var chart = new CanvasJS.Chart("chartContainer33", {
+	width:890,
+	height:1000,
+	exportEnabled: true,
+	animationEnabled: true,
+	title:{
+		text: "Death Cases"
+	},
+	legend:{
+		cursor: "pointer",
+		itemclick: explodePie3
+	},
+	data: [{
+		type: "pie",
+		showInLegend: true,
+		toolTipContent: "{name}: <strong>{y}</strong>",
+		indexLabel: "{name} - {y}",
+		dataPoints: deathData
+		// dataPoints: [
+		// 	{ y: 26, name: "School Aid", exploded: true },
+		// 	{ y: 40, name: "Medical Aid" ,exploded: true },
+		// 	{ y: 5, name: "Debt/Capital" },
+		// 	{ y: 3, name: "Elected Officials" },
+		// 	{ y: 7, name: "University" },
+		// 	{ y: 17, name: "Executive" },
+		// 	{ y: 22, name: "Other Local Assistance"}
+		// ]
+	}]
+});
+chart.render();
+}
+
+function explodePie3 (e) {
+	if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+	} else {
+		e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+	}
+	e.chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer33" style="height: 1000px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

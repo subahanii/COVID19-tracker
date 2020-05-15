@@ -1,0 +1,104 @@
+ <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://rawgit.com/Anujarya300/bubble_maps/master/data/geography-data/datamaps.none.js"></script>
+    <div id="india" style="height: 550px; width: 790px;" style="padding: 0px;margin: 0px">
+        <p style="color: #ccff00">Big Circle= More Cases,Small Circle= Less Cases</p>
+        
+
+    </div>
+    <script>
+    	var bubbles_data = {{sortedConfirmedCasesList|safe}}; 
+    	var colorData = {{colorData|safe}}; 
+    	var colorFill = {{colorFill|safe}}; 
+
+
+        var bubble_map = new Datamap({
+            element: document.getElementById('india'),
+            scope: 'india',
+            geographyConfig: {
+                popupOnHover: true,
+                highlightOnHover: true,
+                borderColor: '#444',
+                borderWidth: 0.5,
+                dataUrl: 'https://rawgit.com/Anujarya300/bubble_maps/master/data/geography-data/india.topo.json'
+                //dataJson: topoJsonData
+            },
+            fills: colorFill,
+
+            /*fills: {
+                'MAJOR': '#306596',
+                'MEDIUM': '#0fa0fa',
+                'MINOR': ' rgb(247, 140, 140)',
+                defaultFill: '#dddddd'
+            },*/
+            data:colorData,
+
+/*
+            data: {
+                'JH': { fillKey: 'MINOR' },
+                'MH': { fillKey: 'MINOR' }
+            },*/
+            setProjection: function (element) {
+                var projection = d3.geo.mercator()
+                    .center([78.9629, 23.5937]) // always in [East Latitude, North Longitude]
+                    .scale(1000);
+                var path = d3.geo.path().projection(projection);
+                return { path: path, projection: projection };
+            }
+        });
+        let bubbles=bubbles_data
+
+        // let bubbles = [
+        //     {
+        //         centered: "MH",
+        //         fillKey: "MAJOR",
+        //         radius: 20,
+        //         state: "Maharastra"
+        //     },
+        //     {
+        //         centered: "AP",
+        //         fillKey: "MAJOR",
+        //         radius: 22,
+        //         state: "Andhra Pradesh"
+        //     },
+        //     {
+        //         centered: "TN",
+        //         fillKey: "MAJOR",
+        //         radius: 16,
+        //         state: "Tamil Nadu"
+        //     },
+        //     {
+        //         centered: "WB",
+        //         fillKey: "MEDIUM",
+        //         radius: 15,
+        //         state: "West Bengal"
+        //     },
+        //     {
+        //         centered: "MP",
+        //         fillKey: "MEDIUM",
+        //         radius: 15,
+        //         state: "Madhya Pradesh"
+        //     },
+        //     {
+        //         centered: "UP",
+        //         fillKey: "MINOR",
+        //         radius: 8,
+        //         state: "Uttar Pradesh"
+        //     },
+        //     {
+        //         centered: "RJ",
+        //         fillKey: "MINOR",
+        //         radius: 30,
+        //         state: "Rajasthan"
+        //     }
+
+        // ]
+        // // ISO ID code for city or <state></state>
+        setTimeout(() => { // only start drawing bubbles on the map when map has rendered completely.
+            bubble_map.bubbles(bubbles, {
+                popupTemplate: function (geo, data) {
+                    return `<div class="hoverinfo">State: ${data.state}</div>`;
+                }
+            });
+        }, 1000);
+    </script>

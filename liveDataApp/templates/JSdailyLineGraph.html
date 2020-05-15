@@ -1,0 +1,90 @@
+
+<script>
+function JSdayByDayData () {
+
+var dataPoint1 = {{confirmDataOfLineGraph|safe}};
+var dataPoint2 = {{curedDataOfLineGraph|safe}};
+var dataPoint3 = {{deathDataOfLineGraph|safe}};
+
+var chart = new CanvasJS.Chart("chartContainerDaily1", {
+	height:1000,
+	width:890,
+	theme:"light2",
+	animationEnabled: true,
+	title:{
+		text: "Trends "
+	},
+	axisY :{
+		includeZero: false,
+		title: "Cases Increased",
+		suffix: "",
+		prefix: "+"
+	},
+	toolTip: {
+		shared: "true"
+	},
+	legend:{
+		cursor:"pointer",
+		itemclick : toggleDataSeries
+	},
+	data: [
+
+	
+	
+	{
+		type: "spline", 
+		showInLegend: true,
+		yValueFormatString: "+##",
+		name: "Confirmed Cases",
+		dataPoints:dataPoint1
+		// dataPoints: [
+		// 	{ label: "Ep. 1", y: 6.64 },
+		// 	{ label: "Ep. 2", y: 6.31 },
+		
+		// ]
+	},
+
+	{
+		type: "spline", 
+		showInLegend: true,
+		yValueFormatString: "+##",
+		name: "Recovered Cases",
+		dataPoints:dataPoint2
+		// dataPoints: [
+		// 	{ label: "Ep. 1", y: 7.94 },
+		// 	{ label: "Ep. 2", y: 7.29 },
+		
+		// ]
+	},
+		{
+		type: "spline", 
+		showInLegend: true,
+		yValueFormatString: "+##",
+		name: "Death Cases",
+		dataPoints: dataPoint3
+		// dataPoints: [
+		// 	{ label: "Ep. 1", y: 10.94 },
+		// 	{ label: "Ep. 2", y: 7.29 },
+			
+		// ]
+	}
+
+	]
+});
+chart.render();
+
+function toggleDataSeries(e) {
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible ){
+		e.dataSeries.visible = false;
+	} else {
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainerDaily1" style="height: 1000px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

@@ -1,0 +1,754 @@
+{%  extends 'main.html'  %}
+
+{%  block content  %}
+<i>Update on: {{updateDate}}</i>
+
+
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: red;
+  font-size: 115px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.close:hover,
+.close:focus {
+  color: gray;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+
+<!-- 
+<h2>Modal Login Form</h2>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+ -->
+<!-- <div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  
+	 
+
+</div> -->
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<div class="row" style="background: #e3eeef;">
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #1e5f61;">
+				<div class="card-header">
+					<h5  class="card-title">Confirmed till date</h5>
+					
+				</div>
+				<div class="card-body" >
+					<h2>{{ totalConf}}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #005600;">
+				<div class="card-header">
+					<h5  class="card-title">Discharged till date</h5>
+					
+					
+				</div>
+				<div class="card-body" >
+					<h2 >{{ totalCure}}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+
+
+
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #920303;">
+				<div class="card-header">
+					<h5  class="card-title">Death till date</h5>
+					
+				</div>
+				<div class="card-body" >
+					<h2>{{ totalDeath}}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+
+	
+
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #ffbb38;">
+				<div class="card-header">
+					<h5  class="card-title">Test till date</h5>
+					
+				</div>
+				<div class="card-body" >
+					<h2>{{  todayTests  }}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+
+	
+</div>
+
+
+
+
+
+<div class="row" style="background: #e3eeef;">
+
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #1e5f61;">
+				<div class="card-header">
+					<h5  class="card-title">New confirmed cases</h5>
+					
+				</div>
+				<div class="card-body" >
+					<h2>+{{ newConfirmedCases}}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #005600;">
+				<div class="card-header">
+					<h5  class="card-title">New Discharged</h5>
+					
+					
+				</div>
+				<div class="card-body" >
+					<h2 >+{{ newCuredCases}}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+
+
+
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #920303;">
+				<div class="card-header">
+					<h5  class="card-title">New Death</h5>
+					
+				</div>
+				<div class="card-body" >
+					<h2>+{{ newDeathCases }}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #ffbb38;">
+				<div class="card-header">
+					<h5  class="card-title">New Tests</h5>
+					
+				</div>
+				<div class="card-body" >
+					<h2>+{{ incTestCount }}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+<div class="row">
+
+
+
+<div id="id011" class="modal">
+      <span onclick="document.getElementById('id011').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <div class="col" >
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Trends Graph(day by day)
+					<a href="#"  >
+						<img src="https://img.pngio.com/fullscreen-icon-vector-375223-free-icons-library-cool-black-pngs-full-screen-1600_1600.jpg" height="40" width="40"> 
+					</a>
+					</h5>
+					
+				</div>
+				<div class="card-body" style="color: black">
+					
+					{%  include 'JSdailyLineGraph.html'  %}
+					
+					
+				</div>
+				 
+			</div>
+			
+		</div>
+		
+	</div>	 
+
+</div>
+
+
+	<div class="col" >
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Trends Graph(day by day) 
+					<a href="#" onclick="document.getElementById('id011').style.display='block'" >
+						<img src="https://img.pngio.com/fullscreen-icon-vector-375223-free-icons-library-cool-black-pngs-full-screen-1600_1600.jpg" height="40" width="40"> 
+					</a>
+					</h5>
+					
+				</div>
+				<div class="card-body" >
+					{%  include 'dailyLineGraph.html'  %}
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+	
+<!-- ######################################################################################## -->
+
+
+
+<div id="id012" class="modal">
+      <span onclick="document.getElementById('id012').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <div class="col" >
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Tests Graph(day by day)
+					<a href="#"  >
+						<img src="https://img.pngio.com/fullscreen-icon-vector-375223-free-icons-library-cool-black-pngs-full-screen-1600_1600.jpg" height="40" width="40"> 
+					</a>
+					</h5>
+					
+				</div>
+				<div class="card-body" style="color: black">
+					
+					{%  include 'JSdailyTestGraph.html'  %}
+					
+					
+				</div>
+				 
+			</div>
+			
+		</div>
+		
+	</div>	 
+
+</div>
+
+
+
+
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Tests Graph(Day by Day)
+					<a href="#" onclick="document.getElementById('id012').style.display='block'">
+						<img src="https://img.pngio.com/fullscreen-icon-vector-375223-free-icons-library-cool-black-pngs-full-screen-1600_1600.jpg" height="40" width="40"> 
+					</a>
+					</h5>
+				</div>
+				<div class="card-body" >
+					{%  include 'dailyTestGraph.html'  %}
+					
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+	
+
+
+
+
+</div>
+
+
+
+
+
+<div class="row">
+
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">India Map
+					
+					</h5>
+				</div>
+				<div class="card-body" style="color: black">
+					{% include 'indiaMap.html' %}
+					
+					
+				</div>				 
+			</div>			
+		</div>		
+	</div>
+	
+</div>
+
+
+
+
+
+
+<div class="row">
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Confirm,Cured,Death
+					
+					</h5>
+				</div>
+				<div class="card-body" style="height: 500px; overflow: scroll;" >
+					{%  include 'tripleGraph.html'   %}
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+	
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row" >
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-pending" style="background: cadetblue;cursor: pointer;">
+				<div class="card-header" onclick= "document.getElementById('myDIV').style.display = 'block';">
+					<h5  class="card-title">{{totalAffected}} States/UTS Affected(Click to expand)
+					
+					</h5>
+				</div>
+				<div class="card-body" id="myDIV" style="display: none;">
+					
+					<table class="table table-sm">
+						<tr class="table-info">
+							<th>S.No</th>
+							<th>Name of State / UT</th>
+							<th>Total Confirmed cases</th>
+							<th>Cured/Discharged/Migrated</th>
+							<th>Death</th>
+							
+						</tr>
+
+						{% for i in data %}
+						<tr>
+							{% for j  in i %}
+							   <td>{{ j }}</td> 
+							{% endfor %}
+														
+						
+						</tr>
+
+						{% endfor %}
+
+						<tr class="table-danger">
+							<th></th>
+							<!-- {% for j  in total %}
+							   <th>{{ j }}</th> 
+							{% endfor %} -->
+							<th>Total Cases</th>
+							<th>{{totalConf}}</th>
+							<th>{{totalCure}}</th>
+							<th>{{totalDeath}}</th>
+							
+						</tr>
+
+					</table>
+					
+				</div>
+				 
+			</div>
+			
+		</div>
+		
+	</div>
+</div>
+
+
+
+
+<div class="row">
+
+
+<div id="id03" class="modal">
+      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <div class="col" >
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Total Death
+					<a href="#"  >
+						<img src="https://img.pngio.com/fullscreen-icon-vector-375223-free-icons-library-cool-black-pngs-full-screen-1600_1600.jpg" height="40" width="40"> 
+					</a>
+					</h5>
+					
+				</div>
+				<div class="card-body" style="color: black">
+					
+				{%  include 'JStotalConfirmedCasesPieChart.html'  %}
+					
+					
+				</div>
+				 
+			</div>
+			
+		</div>
+		
+	</div>
+  
+	 
+
+</div>
+
+
+
+
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Total Confirmed 
+					<a href="#" onclick="document.getElementById('id03').style.display='block'">
+						<img src="https://img.pngio.com/fullscreen-icon-vector-375223-free-icons-library-cool-black-pngs-full-screen-1600_1600.jpg" height="40" width="40"> 
+					</a>
+					</h5>
+
+
+				</div>
+				<div class="card-body" style="color: black">
+					{%  include 'totalConfirmedCasesPieChart.html'  %}
+					
+					
+					
+				</div>
+				 
+			</div>
+			
+		</div>
+		
+	</div>
+	<!-- ############################################################################################## -->
+
+
+
+
+<div id="id02" class="modal">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <div class="col" >
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Total Death
+					<a href="#"  onclick="document.getElementById('id02').style.display='block'">
+						<img src="https://img.pngio.com/fullscreen-icon-vector-375223-free-icons-library-cool-black-pngs-full-screen-1600_1600.jpg" height="40" width="40"> 
+					</a>
+					</h5>
+					
+				</div>
+				<div class="card-body" style="color: black">
+					
+				{%  include 'JStotalCuredCasesPie.html'  %}
+					
+					
+				</div>
+				 
+			</div>
+			
+		</div>
+		
+	</div>
+  
+	 
+
+</div>
+
+
+
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Total Recovered
+					<a href="#" onclick="document.getElementById('id02').style.display='block'" >
+						<img src="https://img.pngio.com/fullscreen-icon-vector-375223-free-icons-library-cool-black-pngs-full-screen-1600_1600.jpg" height="40" width="40"> 
+					</a>
+					</h5>
+					
+				</div>
+				<div class="card-body" style="color: black">
+					
+					{%  include 'totalCuredCasesPie.html'  %}
+					
+					
+				</div>
+				 
+			</div>
+			
+		</div>
+		
+	</div>
+	
+<!-- ########################################################################################################## -->
+<div id="id01" class="modal">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <div class="col" >
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Total Death
+					<a href="#"  >
+						<img src="https://img.pngio.com/fullscreen-icon-vector-375223-free-icons-library-cool-black-pngs-full-screen-1600_1600.jpg" height="40" width="40"> 
+					</a>
+					</h5>
+					
+				</div>
+				<div class="card-body" style="color: black">
+					
+					{%  include 'JStotalDeathCasesPie.html'  %}
+					
+					
+				</div>
+				 
+			</div>
+			
+		</div>
+		
+	</div>
+  
+	 
+
+</div>
+
+
+	<div class="col" >
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Total Death
+					<a href="#" onclick="document.getElementById('id01').style.display='block'" >
+						<img src="https://img.pngio.com/fullscreen-icon-vector-375223-free-icons-library-cool-black-pngs-full-screen-1600_1600.jpg" height="40" width="40"> 
+					</a>
+					</h5>
+					
+				</div>
+				<div class="card-body" style="color: black">
+					
+					{%  include 'totalDeathCasesPie.html'  %}
+					
+					
+				</div>
+				 
+			</div>
+			
+		</div>
+		
+	</div>
+
+
+	
+	
+</div>
+
+<br>
+<br>
+
+
+{%  endblock %}

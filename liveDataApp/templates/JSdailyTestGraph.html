@@ -1,0 +1,60 @@
+
+<script>
+function JSdayByDayTestData () {
+	
+
+var dataPoint11 = {{testIncreamentData|safe}};
+
+var chart = new CanvasJS.Chart("chartContainerDailyTest1", {
+	height:1000,
+	width:890,
+	theme:"light2",
+	animationEnabled: true,
+	title:{
+		text: "Test Graph"
+	},
+	axisY :{
+		includeZero: false,
+		title: "Number of Tests",
+		suffix: "",
+		prefix: "+"
+			},
+	toolTip: {
+		shared: "true"
+	},
+	legend:{
+		cursor:"pointer",
+		itemclick : toggleDataSeries
+	},
+	data: [
+
+	
+	
+	{
+		type: "spline", 
+		showInLegend: true,
+		yValueFormatString: "+##",
+		name: "Tests ",
+		dataPoints:dataPoint11
+		
+	}
+
+	]
+});
+chart.render();
+
+function toggleDataSeries(e) {
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible ){
+		e.dataSeries.visible = false;
+	} else {
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainerDailyTest1" style="height: 1000px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

@@ -1,0 +1,341 @@
+{%  extends 'main.html'  %}
+
+{%  block content  %}
+<i>Update on: {{updateDate}}</i>
+
+<br>
+<div class="row" style="background: #e3eeef;">
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #1e5f61;">
+				<div class="card-header">
+					<h5  class="card-title">Confirmed Till Date</h5>
+					
+				</div>
+				<div class="card-body" >
+					<h2>{{ totalConf}}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #005600;">
+				<div class="card-header">
+					<h5  class="card-title">Discharged till date</h5>
+					
+					
+				</div>
+				<div class="card-body" >
+					<h2 >{{ totalCure}}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+
+
+
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #920303;">
+				<div class="card-header">
+					<h5  class="card-title">Death till date</h5>
+					
+				</div>
+				<div class="card-body" >
+					<h2>{{ totalDeath}}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+
+	
+</div>
+
+
+
+
+
+<div class="row" style="background: #e3eeef;">
+
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #1e5f61;">
+				<div class="card-header">
+					<h5  class="card-title">Today confirmed cases</h5>
+					
+				</div>
+				<div class="card-body" >
+					<h2>+{{ newConfirmedCases}}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #005600;">
+				<div class="card-header">
+					<h5  class="card-title">Today Discharged</h5>
+					
+					
+				</div>
+				<div class="card-body" >
+					<h2 >+{{ newCuredCases}}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+
+
+
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: #920303;">
+				<div class="card-header">
+					<h5  class="card-title">Today Death</h5>
+					
+				</div>
+				<div class="card-body" >
+					<h2>+{{ newDeathCases }}</h2>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+
+	
+</div>
+
+
+
+
+
+
+
+<!-- 
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Day by day Line Graph</h5>
+					
+				</div>
+				<div class="card-body" >
+					{%  include 'dailyLineGraph.html'  %}
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+	
+</div>
+ -->
+
+
+
+
+
+<div class="row">
+
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Map</h5>
+					
+				</div>
+				<div class="card-body" style="color: black">
+					{% include 'indiaMap.html' %}
+					
+					
+				</div>				 
+			</div>			
+		</div>		
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Trends Graph</h5>
+					
+				</div>
+				<div class="card-body" >
+					{%  include 'dailyLineGraph.html'  %}
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+
+
+
+	
+</div>
+
+
+
+
+
+<div class="row">
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Confirm,Cured,Death</h5>
+					
+				</div>
+				<div class="card-body" style="height: 500px; overflow: scroll;" >
+					{%  include 'tripleGraph.html'   %}
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+
+<div class="row" >
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-pending" style="background: cadetblue;cursor: pointer;">
+				<div class="card-header" onclick= "document.getElementById('myDIV').style.display = 'block';">
+					<h5  class="card-title">{{totalAffected}} States/UTS Affected(Click to expand)</h5>
+					
+				</div>
+				<div class="card-body" id="myDIV" style="display: none;">
+					
+					<table class="table table-sm">
+						<tr class="table-info">
+							<th>S.No</th>
+							<th>Name of State / UT</th>
+							<th>Total Confirmed cases</th>
+							<th>Cured/Discharged/Migrated</th>
+							<th>Death</th>
+							
+						</tr>
+
+						{% for i in data %}
+						<tr>
+							{% for j  in i %}
+							   <td>{{ j }}</td> 
+							{% endfor %}
+														
+						
+						</tr>
+
+						{% endfor %}
+
+						<tr class="table-danger">
+							<th></th>
+							<!-- {% for j  in total %}
+							   <th>{{ j }}</th> 
+							{% endfor %} -->
+							<th>Total Cases</th>
+							<th>{{totalConf}}</th>
+							<th>{{totalCure}}</th>
+							<th>{{totalDeath}}</th>
+							
+						</tr>
+
+					</table>
+					
+				</div>
+				 
+			</div>
+			
+		</div>
+		
+	</div>
+</div>
+
+
+
+
+<div class="row">
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Total Confirmed </h5>
+				</div>
+				<div class="card-body" style="color: black">
+					{%  include 'totalConfirmedCasesPieChart.html'  %}
+					
+					
+					
+				</div>
+				 
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Total Recovered</h5>
+					
+				</div>
+				<div class="card-body" style="color: black">
+					
+					{%  include 'totalCuredCasesPie.html'  %}
+					
+					
+				</div>
+				 
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-cetnter text-white mb-3" id="orders-delivered" style="background: cadetblue;">
+				<div class="card-header">
+					<h5  class="card-title">Total Death</h5>
+					
+				</div>
+				<div class="card-body" style="color: black">
+					
+					{%  include 'totalDeathCasesPie.html'  %}
+					
+					
+				</div>
+				 
+			</div>
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+<br>
+<br>
+
+
+{%  endblock %}
