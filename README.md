@@ -10,3 +10,9 @@
 4. Showing test data day by day.
 5. This site is mainly focus on data visualization.
 
+### Sreenshots
+
+
+Mobile             | Laptop
+:-------------------------:|:-------------------------:
+<img src="https://github.com/subahanii/COVID19-tracker/blob/master/DataBase/covid19%20edited.gif" />  |  <img src="https://github.com/subahanii/COVID19-tracker/blob/master/DataBase/first_edit_1.gif" height='400' />
