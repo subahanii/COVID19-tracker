@@ -29,8 +29,12 @@ Mobile             | Laptop
 1. For Indian state data [mohfw.gov.in](https://www.mohfw.gov.in/).
 2. For Test data [www.icmr.gov.in](https://www.icmr.gov.in/)
 
-### Contributions [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/subahanii/COVID19-tracker/issues)
+### Contributions :smiley:[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/subahanii/COVID19-tracker/issues)
 Contributions always welcome .
 
 ### License
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/subahanii/COVID19-tracker/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/subahanii/COVID19-tracker/blob/master/LICENSE) file for details.
+<br><br>
+
+### Thank You.:pray:
+##### If you like this please appreciate by giving start and Fork this repo.Thank You...! :clap: :clap: :clap:
