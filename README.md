@@ -2,7 +2,7 @@
 ##### This is for Indian cases and data gathering from Indian governments [site](https://www.mohfw.gov.in/).This site gather data "automatically" from above site on daily basis on specified time.The main purpose of this site is to showing all data related to covid19 from different indian Govt. site and visualization of it at single plateform for more convenience of indian people and there awareness of this pandemic disease.
 
 ##### Website Link- [www.covid19trackr.ml](http://www.covid19trackr.ml/) .
-<br>
+
 ### Sreenshots
 
 Mobile             | Laptop
