@@ -21,4 +21,4 @@ Mobile             | Laptop
 2. For Test data [www.icmr.gov.in](https://www.icmr.gov.in/)
 
 ### License
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/subahanii/COVID19-tracker/master/LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/subahanii/COVID19-tracker/blob/master/LICENSE) file for details
