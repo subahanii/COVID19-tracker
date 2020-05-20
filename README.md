@@ -14,6 +14,8 @@ Mobile             | Laptop
 2. How many cases increased every day .
 3. How many people are tested.
 4. Showing test data every day.
+ ### Note:
+ Providing API very soon.
 
 
 ### Data Source 
