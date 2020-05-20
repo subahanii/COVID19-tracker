@@ -20,3 +20,5 @@ Mobile             | Laptop
 1. For Indian state data [mohfw.gov.in](https://www.mohfw.gov.in/).
 2. For Test data [www.icmr.gov.in](https://www.icmr.gov.in/)
 
+### License
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/subahanii/COVID19-tracker/master/LICENSE.md) file for details
