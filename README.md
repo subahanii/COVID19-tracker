@@ -11,9 +11,9 @@ Mobile             | Laptop
 
 ### Site Facilities
 1. Showing state wise data .
-2. How many cases increased day by day .
+2. How many cases increased every day .
 3. How many people are tested.
-4. Showing test data day by day.
+4. Showing test data every day.
 
 
 ### Data Source 
