@@ -1,8 +1,8 @@
-# COVID19-tracker
-#### This is for Indian cases and data gathering from Indian governments [site](https://www.mohfw.gov.in/).
-##### Website Link- [www.covid19trackr.ml](http://www.covid19trackr.ml/) .
-<br><br>
+# COVID19-tracker-India
+##### This is for Indian cases and data gathering from Indian governments [site](https://www.mohfw.gov.in/).This site gather data "automatically" from above site on daily basis on specified time.The main purpose of this site is to showing all data related to covid19 from different indian Govt. site and visualization of it at single plateform for more convenience of indian people and there awareness of this pandemic disease.
 
+##### Website Link- [www.covid19trackr.ml](http://www.covid19trackr.ml/) .
+<br>
 ### Sreenshots
 
 Mobile             | Laptop
@@ -14,7 +14,7 @@ Mobile             | Laptop
 2. How many cases increased day by day .
 3. How many people are tested.
 4. Showing test data day by day.
-5. This site is mainly focus on data visualization.
+
 
 ### Data Source 
 1. For Indian state data [mohfw.gov.in](https://www.mohfw.gov.in/).
