@@ -22,7 +22,7 @@ Mobile             | Laptop
 3. How many people are tested.
 4. Showing test data every day.
  ### Note:
- Providing API very soon.
+ Now API is available [github.com/subahanii/COVID19-India-API](https://github.com/subahanii/COVID19-India-API).
 
 
 ### Data Source 
