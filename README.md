@@ -37,4 +37,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 <br><br>
 
 ### Thank You.:pray:
-##### If you like this please appreciate by giving star and Fork this repo if you want to add something.Thank You...! :clap: :clap: :clap:
+##### If you like this please appreciate by giving STAR and FORK this repo if you want to add something.Thank You...! :clap: :clap: :clap:
