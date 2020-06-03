@@ -21,7 +21,7 @@ Mobile             | Laptop
 2. How many cases increased every day .
 3. How many people are tested.
 4. Showing test data every day.
- ### Note:
+ ### REST API:
  Now API is available [github.com/subahanii/COVID19-India-API](https://github.com/subahanii/COVID19-India-API).
 
 
@@ -37,4 +37,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 <br><br>
 
 ### Thank You.:pray:
-##### If you like this please appreciate by giving start and Fork this repo.Thank You...! :clap: :clap: :clap:
+##### If you like this please appreciate by giving start and Fork this repo if you want to add something.Thank You...! :clap: :clap: :clap:
