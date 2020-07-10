@@ -6,9 +6,9 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/subahanii/COVID19-tracker/issues)
 
 
-##### This is for Indian cases and data gathering from Indian governments [site](https://www.mohfw.gov.in/).This site gather data "automatically" from above site on daily basis on specified time.The main purpose of this site is to showing all data related to covid19 from different indian Govt. site and visualization of it at single plateform for more convenience of indian people and there awareness of this pandemic disease.
+##### This is for Indian cases and data gathering from Indian governments [site](https://www.mohfw.gov.in/) and [icmr.gov.in](icmr.gov.in).This site gather data "automatically" from above site on daily basis on specified time.The main purpose of this site is to showing all data related to covid19 from different indian Govt. site and visualization of it at single plateform for more convenience of indian people and there awareness of this pandemic disease.
 
-##### Website Link- [www.covid19trackr.ml](http://www.covid19trackr.ml/) .
+##### Website Link- [covid19trackr.ml](http://covid19trackr.ml/) .
 
 ### Sreenshots
 
